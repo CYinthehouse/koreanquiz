@@ -367,6 +367,19 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Test-specific question text colors */
+        #test2Page .question-text {
+            color: #3498db; /* Blue for Test 2 */
+        }
+        
+        #test3Page .question-label {
+            color: #e91e63; /* Pink for Test 3 */
+        }
+        
+        #test4Page .question-text {
+            color: #9b59b6; /* Purple for Test 4 */
+        }
+        
         /* Final Page Contact Form Styles */
         .contact-form {
             margin-top: 2rem;
@@ -495,6 +508,29 @@
         <button class="start-button" onclick="showQuiz()">
             🚀 Let's Start!
         </button>
+    </div>
+
+    <!-- Disclaimer Page -->
+    <div class="quiz-page" id="disclaimerPage" style="display: none;">
+        <h1>📋 Before You Begin</h1>
+        <div class="description">
+            Important instructions for taking this assessment.
+        </div>
+        
+        <div class="quiz-container">
+            <div class="question-item">
+                <div class="question-text" style="color: #f9ca24; text-align: center; line-height: 1.6;">
+                    <strong>📝 Instructions:</strong><br><br>
+                    If you do not know the answer to a question, just leave it blank.<br><br>
+                    There's no penalty for unanswered questions, so don't worry if you encounter something unfamiliar!<br><br>
+                    Take your time and do your best. ✨
+                </div>
+            </div>
+            
+            <button class="submit-button" onclick="startActualQuiz()">
+                🚀 I Understand - Start Quiz!
+            </button>
+        </div>
     </div>
 
     <!-- Quiz Page -->
@@ -1084,7 +1120,7 @@
     <div class="quiz-page" id="completionPage" style="display: none;">
         <h1>Congrats on Finishing!</h1>
         <div class="description">
-            Now please enter your name and phone number below. Mr. Calvin will contact you with your results!
+            Now please enter your name and phone number below. Mr. Calvin will contact you with your results and tell you what you got right and wrong!
         </div>
         
         <div class="quiz-container">
@@ -1113,6 +1149,11 @@
     <script>
         function showQuiz() {
             document.getElementById('titlePage').style.display = 'none';
+            document.getElementById('disclaimerPage').style.display = 'flex';
+        }
+        
+        function startActualQuiz() {
+            document.getElementById('disclaimerPage').style.display = 'none';
             document.getElementById('quizPage').style.display = 'flex';
         }
         
